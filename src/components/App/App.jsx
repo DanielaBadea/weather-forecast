@@ -10,7 +10,6 @@ import WeatherNextThenDays from '../NextThenDays/NextThenDays';
 function App() {
   const dispatch = useDispatch();
   const weatherCity = useSelector(selectCity);
-  const weather = useSelector(selectWeather);
   const photo = useSelector(selectCityPhoto);
   const [cityName, setCityName] = useState('');
 
