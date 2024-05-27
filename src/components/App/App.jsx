@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCity, getCurrentLocation, getCityPhoto, getWeather10Days } from '../../redux/operations';
 import ShowCity from '../ShowCity/ShowCity';
 import WeatherSearch from '../WeatherSearch/WeatherSearch';
-import { selectCity, selectCityPhoto, selectWeather } from '../../redux/selectors';
+import { selectCity, selectCityPhoto} from '../../redux/selectors';
 import css from './App.module.css';
 import WeatherNextThenDays from '../NextThenDays/NextThenDays';
 
