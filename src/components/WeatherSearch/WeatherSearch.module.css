@@ -1,0 +1,20 @@
+.wrapperInput{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.flexWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+input{
+    padding: 13px 20px;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: #ffffffb0;
+}
