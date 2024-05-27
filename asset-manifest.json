@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-homework-template/static/css/main.7acaea2f.css",
-    "main.js": "/react-homework-template/static/js/main.07d3183d.js",
-    "index.html": "/react-homework-template/index.html",
-    "main.7acaea2f.css.map": "/react-homework-template/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/react-homework-template/static/js/main.07d3183d.js.map"
+    "main.css": "/weather-forecast/static/css/main.831125c8.css",
+    "main.js": "/weather-forecast/static/js/main.53c54736.js",
+    "index.html": "/weather-forecast/index.html",
+    "main.831125c8.css.map": "/weather-forecast/static/css/main.831125c8.css.map",
+    "main.53c54736.js.map": "/weather-forecast/static/js/main.53c54736.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/css/main.831125c8.css",
+    "static/js/main.53c54736.js"
   ]
 }
