@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getCurrentLocation, getCity, getCityPhoto, getWeather10Days } from './operations';
+import { getCurrentLocation, getCity, getCityPhoto, getWeather5Days } from './operations';
 
 const weatherInitialState = {
   city: null,
@@ -44,14 +44,14 @@ const weatherSlice = createSlice({
         state.error = null;
         state.cityPhoto = action.payload;
       })
-      .addCase(getWeather10Days.rejected, handleRejected)
-      .addCase(getWeather10Days.pending, handlePending)
-      .addCase(getWeather10Days.fulfilled, (state, action) => {
+      .addCase(getCityPhoto.rejected, handleRejected)
+      .addCase(getWeather5Days.pending, handlePending)
+      .addCase(getWeather5Days.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.weather = action.payload;
       })
-      .addCase(getCityPhoto.rejected, handleRejected)
+      .addCase(getWeather5Days.rejected, handleRejected);
   },
 });
 

@@ -1,47 +1,126 @@
-.wraperShowWeather{
-    margin-top:80px;
+.wraperShowWeather {
+    margin-top: 80px;
     margin-bottom: 80px;
-    width: 20%;
-    background-color: #ffffffe6;
+    width: 40%;
+    background-color: #0000009c;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     border-radius: 20px;
     padding: 20px;
-    gap: 10px;
+    gap: 20px;
 }
-.iconSun{
+
+.titleDaily {
+    border-bottom: 1px solid #eeeded61;
+}
+
+.titleDaily > h1 {
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    color: #eeededad;
+    margin-bottom: 8px;
+}
+
+.wrapperDailyData {
+    display: flex;
+    gap: 20px;
+}
+
+.wrapperLeft{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+    width: 60%;
+    color: #ffff;
+} 
+
+.iconSun {
     color: #FFC107;
 }
-.iconApi{
+
+.iconApi {
     background-color: transparent;
     width: 50px;
     height: 50px;
 }
-.description{
+
+.description {
     text-transform: capitalize;
+    font-weight: 500;
 }
-.tempValue{
+
+.tempValue {
     display: flex;
     flex-direction: row;
     gap: 30px;
 }
-.tempInt{
+
+.tempInt {
     font-weight: 600;
+    font-size: 12px;
 }
-.containerIntervSun{
+
+.wrapperSunset, .wrapperSunrise {
     display: flex;
-    flex-direction: row;
-    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
 }
-.iconSunrise{
+
+.wrapperRight {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: #ffff;
+}
+
+.wrapperTop, .wrapperBottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wrapperFeelsLike, .wrapperHumidity, .wrapperWind, .wrapperVisibility {
+    padding: 10px;
+    background-color: #ffffff69;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.containerWindData {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.containerIntervSun {
+    display: flex;
+    gap: 30px;
+    height: 20%;
+}
+
+.iconSunrise {
     color: rgb(255, 230, 0);
 }
-.iconSunSet{
+
+.iconSunSet {
     color: rgb(255, 115, 0);
 }
-.intervSunData{
+
+.intervSunData {
     display: flex;
     flex-direction: column;
     align-items: center;

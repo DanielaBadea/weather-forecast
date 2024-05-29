@@ -5,6 +5,8 @@ import css from './ShowCity.module.css';
 import { AiFillSun } from "react-icons/ai";
 import { FiSunrise } from "react-icons/fi";
 import { FiSunset } from "react-icons/fi";
+import { PiWind } from "react-icons/pi";
+
 
 
 const ShowCity = () => {
@@ -26,8 +28,12 @@ const ShowCity = () => {
 
   const weatherIconUrl = `http://openweathermap.org/img/wn/${cityWeather.weather[0].icon}@2x.png`;
 
+
   return (
     <div className={css.wraperShowWeather}>
+      <div className={css.titleDaily}><h1>Daily Forcast</h1></div>
+      <div className={css.wrapperDailyData}>
+      <div className={css.wrapperLeft}>
       <h2>{cityWeather.name}, {cityWeather.sys.country}</h2>
       <h2>{Math.floor(cityWeather.main.temp)}°C</h2>
       {isClearSky ? (
@@ -40,10 +46,43 @@ const ShowCity = () => {
       <p className={css.tempInt}>Min: <span>{Math.floor(cityWeather.main.temp_min)}°C</span></p>
       <p className={css.tempInt}>Max: <span>{Math.floor(cityWeather.main.temp_max)}°C</span></p>
       </div>
-     <div className={css.containerIntervSun}>
-     <p className={css.intervSunData}> <span><FiSunrise className={css.iconSunrise}/></span> {formatUnixTimestampToLocalTime(cityWeather.sys.sunrise, cityWeather.timezone)}</p>
-      <p className={css.intervSunData}><span><FiSunset className={css.iconSunSet}/></span>{formatUnixTimestampToLocalTime(cityWeather.sys.sunset, cityWeather.timezone)}</p>
+      <div className={css.containerIntervSun}>
+        <div className={css.wrapperSunrise}>
+        <span><FiSunrise className={css.iconSunrise}/></span>
+      <span>{formatUnixTimestampToLocalTime(cityWeather.sys.sunrise, cityWeather.timezone)}</span> 
+        </div>
+      <div className={css.wrapperSunset}>
+      <span><FiSunset className={css.iconSunSet}/></span>
+      <span>{formatUnixTimestampToLocalTime(cityWeather.sys.sunset, cityWeather.timezone)}</span>
+      </div>
+      </div>
+      </div>
+      <div className={css.wrapperRight}>
+        <div className={css.wrapperTop}>
+        <div className={css.wrapperFeelsLike}>
+          <span>Feels like</span>
+          <span>{Math.floor(cityWeather.main.feels_like)}°C</span>
+        </div>
+        <div className={css.wrapperHumidity}>
+          <span>Humidity</span>
+          <span>{cityWeather.main.humidity}%</span>
+        </div>
+        </div>
+        <div className={css.wrapperBottom}>
+        <div className={css.wrapperWind}>
+          <span>Wind</span>
+          <div className={css.containerWindData}>
+            <PiWind/>
+            <span>{cityWeather.wind.speed}m/s</span>
+          </div>
+        </div>  
+        <div className={css.wrapperVisibility}>
+          <span>Visibility</span>
+          <span>{(cityWeather.visibility/1000).toFixed(2)} km</span>
+          </div>    
      </div>
+        </div>
+      </div>
       
     </div>
   );
