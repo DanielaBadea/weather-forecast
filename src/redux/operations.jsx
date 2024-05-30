@@ -13,6 +13,10 @@ export const getCity = createAsyncThunk(
       console.log("data weather city:", response.data);
       return response.data;
     } catch (err) {
+      if(err.response&& err.response.status === 404)
+        {
+          return thunkAPI.rejectWithValue("The name of the city is incorrect. Please try again.")
+        }
       return thunkAPI.rejectWithValue(err.message);
     }
   }
@@ -22,7 +26,7 @@ export const getWeather5Days = createAsyncThunk(
   'weather/getWeather5Days',
   async ({ cityName, country }, thunkAPI) => {
     try {
-      const response = await axios.get(`/forecast?q=${cityName},${country}&cnt=5&appid=${WEATHER_KEY}&units=metric`);
+      const response = await axios.get(`/forecast?q=${cityName},${country}&appid=${WEATHER_KEY}&units=metric`);
       console.log("data weather:", response.data);
       return response.data.list;
     } catch (err) {

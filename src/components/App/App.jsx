@@ -3,13 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCity, getCurrentLocation, getCityPhoto, getWeather5Days } from '../../redux/operations';
 import ShowCity from '../ShowCity/ShowCity';
 import WeatherSearch from '../WeatherSearch/WeatherSearch';
-import { selectCity, selectCityPhoto, selectWeather5Days } from '../../redux/selectors';
+import { selectCity, selectCityPhoto, selectIsLoading, selectWeather5Days } from '../../redux/selectors';
 import css from './App.module.css';
 import WeatherNextFiveDays from '../NextThenDays/NextThenDays';
+import Spinner from 'components/Spinner/Spinner';
 
 function App() {
   const dispatch = useDispatch();
   const weatherCity = useSelector(selectCity);
+  const loader = useSelector(selectIsLoading);
   const photo = useSelector(selectCityPhoto);
   const weather5Days = useSelector(selectWeather5Days);
   const [cityName, setCityName] = useState('');
@@ -56,9 +58,9 @@ function App() {
 
   return (
     <div className={css.wrapper} style={wrapperStyle}>
-      <WeatherSearch setCityNameProp={setCityNameMemoized} />
-      {weatherCity && weatherCity.name && <ShowCity />}
-      {weather5Days && weather5Days.length > 0 && <WeatherNextFiveDays />}
+      {loader ? <Spinner/>: <WeatherSearch setCityNameProp={setCityNameMemoized} />}
+      {loader ? <Spinner/>: (weatherCity && weatherCity.name && <ShowCity />)}
+      {loader ? <Spinner/>: (weather5Days && weather5Days.length > 0 && <WeatherNextFiveDays />)}
     </div>
   );
 }
